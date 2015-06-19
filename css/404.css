@@ -1,6 +1,7 @@
 @charset "utf-8";
 /*http://bpatterns.blogspot.kr/2012/05/beige-paper.html*/
 body {text-align: center; background-color: #EEE; background-image: url(../images/beige-paper.png); background-repeat: repeat; font-family: NanumBarunGothic, sans-serif;}
+p {font-family: NanumMyeongjo, serif;}
 /*Masking: http://www.1stwebdesigner.com/create-textured-text-css/*/
 /*Letterpress: http://www.midwinter-dg.com/permalink-7-great-css-based-text-effects-using-the-text-shadow-property_2011-03-03.html*/
 h1 {margin: 1em 0 0.2em; font-size: 12em; color: #DDD; text-shadow: 0 1px 1px #FAFAFA, 0 -2px 2px #444; -webkit-transform: rotate(-5deg); -o-transform: rotate(-5deg); transform: rotate(-5deg); -webkit-mask-image: url(../images/rough-texture.png); -moz-mask-image: url(../images/rough-texture.png); -o-mask-image: url(../images/rough-texture.png); mask-image: url(../images/rough-texture.png);}
