@@ -1,3 +1,5 @@
+@CHARSET "UTF-8";
+
 body {font-family: 'NanumBarunGothic'; font-style:normal; background: url('../images/background.jpg') center/cover no-repeat fixed;}
 
 div.wrapper {position: absolute; min-height: 100%; left: 0; right: 50%; padding: 2em; background-color: #FFF;}
@@ -35,24 +37,3 @@ ul.fontfamily > li:nth-child(8) {font-family: 'NanumGothicCoding'; font-weight: 
 ul.fontfamily > li:last-child {font-family: 'NanumGothicCoding'; font-weight: 700;}
 
 code {font-family: 'NanumGothicCoding'; background: #EEE;}
-
-@media screen and (max-width:479px){
-}
-@media screen and (min-width:480px) and (max-width:767px){
-}
-@media screen and (max-width:767px){
-	body {font-size: 16px;}
-}
-@media screen and (min-width:768px){
-}
-@media screen and (min-width:768px) and (max-width:1440px){
-	body{font-size:20px;}
-}
-@media screen and (min-width:1441px) and (max-width:1920px){
-	body{font-size:24px;}
-}
-@media screen and (min-width:1921px){
-	body{font-size:28px;}
-}
-@media print {
-}
