@@ -1,8 +1,6 @@
-body {font-family: 'NanumBarunGothic'; font-style:normal;}
-div.background {position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; overflow: hidden;}
-div.background > img {filter: blur(0.5em); -webkit-filter: blur(0.5em); -moz-filter: blur(0.5em); -o-filter: blur(0.5em); -ms-filter: blur(0.5em); margin: -1em; min-height: 100%; min-width: 100%;}
+body {font-family: 'NanumBarunGothic'; font-style:normal; background: url('../images/background.jpg') center/cover no-repeat fixed;}
 
-div.wrapper {width: 50%; background-color: #FFF;}
+div.wrapper {position: absolute; min-height: 100%; left: 0; right: 50%; padding: 2em; background-color: #FFF;}
 
 table.gray6 > tbody > tr > td:first-child {background: #000; color: #FFF;}
 table.gray6 > tbody > tr > td:nth-child(2) {background: #333; color: #FFF;}
