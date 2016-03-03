@@ -1,1 +1,45 @@
 body {font-family: 'NanumBarunGothic'; font-style:normal; font-weight:200;}
+
+table.gray6 > tr > td:first-child {background: #000;}
+table.gray6 > tr > td:nth-child(2) {background: #333}
+table.gray6 > tr > td:nth-child(3) {background: #666;}
+table.gray6 > tr > td:nth-child(4) {background: #999;}
+table.gray6 > tr > td:nth-child(5) {background: #CCC;}
+table.gray6 > tr > td:last-child {background: #FFF;}
+
+table.gray4 > tr > td:first-child {background: #000;}
+table.gray4 > tr > td:nth-child(2) {background: #555}
+table.gray4 > tr > td:nth-child(3) {background: #AAA;}
+table.gray4 > tr > td:last-child {background: #FFF;}
+
+table.fontsize > tr > td:first-child {font-size: 0.25em;}
+table.fontsize > tr > td:nth-child(2) {font-size: 0.5em;}
+table.fontsize > tr > td:nth-child(3) {font-size: 0.75em;}
+table.fontsize > tr > td:nth-child(4) {font-size: 1em;}
+table.fontsize > tr > td:nth-child(5) {font-size: 1.25em;}
+table.fontsize > tr > td:nth-child(6) {font-size: 1.5em;}
+table.fontsize > tr > td:nth-child(7) {font-size: 1.75em;}
+table.fontsize > tr > td:nth-child(8) {font-size: 2em;}
+table.fontsize > tr > td:last-child {font-size: 3em;}
+
+
+@media screen and (max-width:479px){
+}
+@media screen and (min-width:480px) and (max-width:767px){
+}
+@media screen and (max-width:767px){
+	body {font-size: 16px;}
+}
+@media screen and (min-width:768px){
+}
+@media screen and (min-width:768px) and (max-width:1440px){
+	body{font-size:20px;}
+}
+@media screen and (min-width:1441px) and (max-width:1920px){
+	body{font-size:24px;}
+}
+@media screen and (min-width:1921px){
+	body{font-size:28px;}
+}
+@media print {
+}
