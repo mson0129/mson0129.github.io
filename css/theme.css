@@ -36,4 +36,21 @@ ul.fontfamily > li:nth-child(7) {font-family: 'NanumMyeongjo'; font-weight: 900;
 ul.fontfamily > li:nth-child(8) {font-family: 'NanumGothicCoding'; font-weight: 400;}
 ul.fontfamily > li:last-child {font-family: 'NanumGothicCoding'; font-weight: 700;}
 
+ul.emRatio > li:first-child {font-size: 25em;}
+	ul.emRatio > li:first-child > span {font-size: 0.01em;}
+ul.emRatio > li:nth-child(2) {font-size: 12.5em;}
+	ul.emRatio > li:nth-child(2) > span {font-size: 0.02em;}
+ul.emRatio > li:nth-child(3) {font-size: 6.25em;}
+	ul.emRatio > li:nth-child(3) > span {font-size: 0.04em;}
+ul.emRatio > li:nth-child(4) {font-size: 5em;}
+	ul.emRatio > li:nth-child(4) > span {font-size: 0.05em;}
+ul.emRatio > li:nth-child(5) {font-size: 2.5em;}
+	ul.emRatio > li:nth-child(5) > span {font-size: 0.1em;}
+ul.emRatio > li:nth-child(6) {font-size: 1.25em;}
+	ul.emRatio > li:nth-child(6) > span {font-size: 0.2em;}
+ul.emRatio > li:nth-child(7) {font-size: 1em;}
+	ul.emRatio > li:nth-child(7) > span {font-size: 0.25em;}
+ul.emRatio > li:last-child {font-size: 0.5em;}
+	ul.emRatio > li:last-child > span {font-size: 0.5em;}
+
 code {font-family: 'NanumGothicCoding'; background: #EEE;}
