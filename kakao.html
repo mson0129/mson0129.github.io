@@ -17,15 +17,13 @@
 
 </head>
 <body>
-<h3>카카오톡 앱이 설치되어 있는 모바일 기기라면 아래의 링크가 동작합니다.</h3>
+<h3>DM발송용</h3>
 <a id="kakao-link-btn" href="javascript:;">
 <img src="http://dn.api1.kage.kakao.co.kr/14/dn/btqa9B90G1b/GESkkYjKCwJdYOkLvIBKZ0/o.jpg"/>
 </a>
 <script type='text/javascript'>
   //<![CDATA[
-    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
-    Kakao.init('b84f7523c913893a232a584b47d72397');
-    // // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+    Kakao.init('b84f7523c913893a232a584b47d72397'); //Fasoo App Javascript Key
     Kakao.Link.createTalkLinkButton({
       container: '#kakao-link-btn',
       label: '[간식봇2.0] 오늘의 간식은 과연 무엇일까요?',
@@ -36,7 +34,7 @@
       },
       webButton: {
         text: '오늘의 간식 보기',
-        url: 'http://www.fasoo.com' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+        url: 'http://www.instagram.com/fasoo0608'
       }
     });
   //]]>
