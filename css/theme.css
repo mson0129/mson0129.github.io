@@ -32,9 +32,13 @@ ul.fontfamily > li:nth-child(3) {font-family: 'NanumBarunGothic'; font-weight: 4
 ul.fontfamily > li:nth-child(4) {font-family: 'NanumBarunGothic'; font-weight: 700;}
 ul.fontfamily > li:nth-child(5) {font-family: 'NanumMyeongjo'; font-weight: 400;}
 ul.fontfamily > li:nth-child(6) {font-family: 'NanumMyeongjo'; font-weight: 700;}
-ul.fontfamily > li:nth-child(7) {font-family: 'NanumMyeongjo'; font-weight: 900;}
+ul.fontfamily > li:nth-child(7) {font-family: 'NanumMyeongjo'; font-weight: 800;}
 ul.fontfamily > li:nth-child(8) {font-family: 'NanumGothicCoding'; font-weight: 400;}
-ul.fontfamily > li:last-child {font-family: 'NanumGothicCoding'; font-weight: 700;}
+ul.fontfamily > li:nth-child(9) {font-family: 'NanumGothicCoding'; font-weight: 700;}
+ul.fontfamily > li:nth-child(10) {font-family: 'NanumSquare'; font-weight: 300;}
+ul.fontfamily > li:nth-child(11) {font-family: 'NanumSquare'; font-weight: 400;}
+ul.fontfamily > li:nth-child(12) {font-family: 'NanumSquare'; font-weight: 700;}
+ul.fontfamily > li:nth-child(13) {font-family: 'NanumSquare'; font-weight: 800;}
 
 ul.emRatio > li:first-child {font-size: 25em;}
 	ul.emRatio > li:first-child > span {font-size: 0.01em;}
