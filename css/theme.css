@@ -2,6 +2,7 @@
 @charset "UTF-8";
 
 body {font-family: 'NanumBarunGothic'; font-style:normal; background: url('../images/background.jpg') center/cover no-repeat fixed;}
+article {margin: 2rem auto;}
 
 div.wrapper {position: absolute; min-height: 100%; left: 0; right: 50%; padding: 2em; background-color: #FFF;}
 
