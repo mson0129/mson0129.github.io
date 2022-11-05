@@ -217,15 +217,16 @@
 	</div>
 	<script src="//prismjs.com/prism.js" data-default-language="markup"></script>
 	<script type="text/javascript">
-		const heightOutput = document.querySelector("#height");
-		const widthOutput = document.querySelector("#width");
+		(() => {
+			const heightOutput = document.querySelector("#height");
+			const widthOutput = document.querySelector("#width");
 
-		function reportWindowSize() {
-		heightOutput.textContent = window.innerHeight;
-		widthOutput.textContent = window.innerWidth;
-		}
-
-		window.onresize = reportWindowSize;
+			function reportWindowSize() {
+				heightOutput.textContent = window.innerHeight;
+				widthOutput.textContent = window.innerWidth;
+			}
+			window.onresize = reportWindowSize;
+		})();
 	</script>
 </body>
 </html>
