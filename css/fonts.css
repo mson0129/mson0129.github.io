@@ -16,7 +16,9 @@ http://clagnut.com/blog/2228
 800 Extra Bold(Ultra Bold)
 900 Black(Heavy)
 */
-@CHARSET "UTF-8";
+
+/* At-rules */
+@charset "UTF-8";
 
 /*https://github.com/hiun/NanumBarunGothic*/
 @font-face {

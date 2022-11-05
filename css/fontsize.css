@@ -3,7 +3,9 @@ FontSize
 Michael Son(mson0129@gmail.com)
 03MAR2016(1.0.0)
 */
-@CHARSET "UTF-8";
+
+/* At-rules */
+@charset "UTF-8";
 
 @media screen and (max-width:479px){
 }

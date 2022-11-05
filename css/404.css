@@ -1,4 +1,6 @@
-@charset "utf-8";
+/* At-rules */
+@charset "UTF-8";
+
 /*http://bpatterns.blogspot.kr/2012/05/beige-paper.html*/
 body {text-align: center; background-color: #EEE; background-image: url(../images/beige-paper.png); background-repeat: repeat; font-family: 'NanumBarunGothic', sans-serif;}
 p {font-family: 'NanumMyeongjo', serif;}

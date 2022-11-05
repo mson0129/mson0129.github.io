@@ -1,27 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Michael Son</title>
+	<!-- Charset -->
+	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<!--[if lt IE 9]>
-	<script>
-		document.createElement("header");
-		document.createElement("hgroup");
-		document.createElement("nav");
-		document.createElement("section"); 
-		document.createElement("article");
-		document.createElement("aside");
-		document.createElement("footer");
+
+	<!-- Title -->
+	<title>Michael Son</title>
+
+	<!-- Meta Information (For SEO) -->
+	<meta name="author" content="Michael Son" />
+	<meta name="keywords" content="Developer, Web, Frontend" />
+	<meta name="description" content="mson0129.github.io" />
+
+	<!-- Open Graph (For SNS) – https://ogp.me/ -->
+	<meta name="og:site_name" content="Michael Son" />
+	<meta name="og:title" content="Michael Son" />
+	<meta name="og:description" content="mson0129.github.io" />
+	<meta name="og:type" content="website" />
+	<meta name="og:url" content="https://mson0129.github.io" />
+	<meta name="og:image" content="/static/images/thumbnail.png" />
+	<meta property="og:image:width" content="300" /> <!-- Optional -->
+	<meta property="og:image:height" content="300" /> <!-- Optional -->
+	<meta name="og:locale" content="ko_KR" />
+
+	<!-- Twitter Card (For SNS) – https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@mson0129" />
+	<meta name="twitter:title" content="Michael Son" />
+	<meta name="twitter:description" content="mson0129.github.io" />
+	<meta name="twitter:image" content="/static/images/thumbnail.png" />
+
+	<!-- Theme Color -->
+	<meta name="theme-color" content="#003DA6" />
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png">
+	<link rel="icon" href="/static/favicons/favicon.ico" />
+
+	<!-- Apple Web App -->
+	<meta name="apple-mobile-web-app-title" content="Michael Son" lang="en-us" />
+	<meta name="apple-mobile-web-app-title" content="Michael Son" lang="ko-kr" />
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
+	<link rel="apple-touch-startup-image" href="/static/images/launch.png" />
+
+	<!-- Viewport -->
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/fonts.css" />
+	<link rel="stylesheet" type="text/css" href="css/fontsize.css" />
+	<link rel="stylesheet" type="text/css" href="css/theme.css" />
+	<link rel="stylesheet" href="//prismjs.com/themes/prism.css">
+
+	<script type="text/javascript">
+		const heightOutput = document.querySelector("#height");
+		const widthOutput = document.querySelector("#width");
+
+		function reportWindowSize() {
+		heightOutput.textContent = window.innerHeight;
+		widthOutput.textContent = window.innerWidth;
+		}
+
+		window.onresize = reportWindowSize;
 	</script>
-	<![endif]-->
-	<link rel='stylesheet' type='text/css' href='css/reset.css' />
-	<link rel='stylesheet' type='text/css' href='css/fonts.css' />
-	<link rel='stylesheet' type='text/css' href='css/fontsize.css' />
-	<link rel='stylesheet' type='text/css' href='css/theme.css' />
-	<link rel='stylesheet' href='//prismjs.com/themes/prism.css'>
 </head>
 <body>
-	<div class='wrapper'>
+	<div class="wrapper">
 		<header>
 			<h1>Michael Son</h1>
 			<nav>
@@ -31,8 +79,16 @@
 				</ul>
 			</nav>
 		</header>
-		<div class='part'>
-			<table class='gray6'>
+		<main>
+			<article>
+				<h3>Window Size</h3>
+				<p>Resize the browser window to fire the <code>resize</code> event.</p>
+				<p>Window height: <span id="height"></span></p>
+				<p>Window width: <span id="width"></span></p>
+			</article>
+		</main>
+		<div class="part">
+			<table class="gray6">
 				<tbody>
 					<tr>
 						<td>#000</td>
@@ -44,7 +100,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<table class='gray4'>
+			<table class="gray4">
 				<tbody>
 					<tr>
 						<td>#000</td>
@@ -54,7 +110,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<table class='fontsize'>
+			<table class="fontsize">
 				<tbody>
 					<tr>
 						<td>0.25em</td>
@@ -69,7 +125,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<ul class='fontfamily'>
+			<ul class="fontfamily">
 				<li>NanumBarunGothic 200</li>
 				<li>NanumBarunGothic 300</li>
 				<li>NanumBarunGothic 400</li>
@@ -84,7 +140,7 @@
 				<li>NanumSquare 700</li>
 				<li>NanumSquare 800</li>
 			</ul>
-			<ul class='emRatio'>
+			<ul class="emRatio">
 				<li>25em <span>X 0.01em</span></li>
 				<li>12.5em <span>X 0.02em</span></li>
 				<li>6.25em <span>X 0.04em</span></li>
@@ -94,14 +150,14 @@
 				<li>1em <span>X 0.25em</span></li>
 				<li>0.5em <span>X 0.5em</span></li>
 			</ul>
-			<pre><code class='language-css'>.element {
+			<pre><code class="language-css">.element {
 		position: absolute;
 		top: 50%;
 		-webkit-transform: translateY(-50%);
 		-ms-transform: translateY(-50%);
 		transform: translateY(-50%);
 	}</code></pre>
-	<div style='background-color: #FD653A;
+	<div style="background-color: #FD653A;
 	text-shadow: rgb(228, 91, 52) 1px 1px,
 	rgb(228, 91, 52) 2px 2px,
 	rgb(228, 91, 52) 3px 3px,
@@ -132,8 +188,8 @@
 	rgb(250, 99, 57) 28px 28px,
 	rgb(251, 100, 57) 29px 29px,
 	rgb(253, 101, 58) 30px 30px;
-	font-weight: bold; color: #FFF; padding: 50px;'>Orange</div>
-	<pre><code class='language-css'>
+	font-weight: bold; color: #FFF; padding: 50px;">Orange</div>
+	<pre><code class="language-css">
 	background-color: #FD653A;
 	text-shadow: rgb(228, 91, 52) 1px 1px,
 	rgb(228, 91, 52) 2px 2px,
