@@ -3,16 +3,28 @@
     <head>
         <title>SQL.js Test</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js" integrity="sha512-n7swEtVCvXpQ7KxgpPyp0+DQQEf5vPpmzCRl14x2sp2v5LpCYCjrAx03mkBAbWwGF9eUoIk8YVcDFuJRIeYttg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            config = {
+                locateFile: filename => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${filename}`
+            }
+            // initSqlJs(config).then(function(SQL){
+            //     var db = new SQL.Database();
+            //     var res = db.exec("SELECT 1+1 AS solution");
+            //     console.log(res);
+            // });
+
+            const sqlPromise = initSqlJs(config);
+            const dataPromise = fetch("db.sqlite3").then(res => res.arrayBuffer());
+            Promise.all([sqlPromise, dataPromise]).then(([SQL, buf]) => {
+                var db = new SQL.Database(new Uint8Array(buf));
+                var res = db.exec("SELECT * FROM sqlite_sequence");
+                console.log(res);
+                document.querySelector(".output").innerHTML = JSON.stringify(res);
+            });
+        </script>
     </head>
     <body>
         <h1>SQL.js Test</h1>
-        <script>
-            initSqlJs({locateFile: filename => 'db.sqlite3' }).then(function(SQL) {
-                const db = new SQL.Database();
-                
-                const contents = db.exec("SELECT * FROM sqlite_sequence;");
-                console.log(contents);
-            });
-        </script>
+        <div class="output"></div>
     </body>
 </html>
