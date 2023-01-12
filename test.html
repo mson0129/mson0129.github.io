@@ -3,6 +3,7 @@
     <head>
         <title>SQL.js Test</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js" integrity="sha512-n7swEtVCvXpQ7KxgpPyp0+DQQEf5vPpmzCRl14x2sp2v5LpCYCjrAx03mkBAbWwGF9eUoIk8YVcDFuJRIeYttg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
         <script>
             config = {
                 locateFile: filename => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${filename}`
@@ -14,17 +15,57 @@
             // });
 
             const sqlPromise = initSqlJs(config);
-            const dataPromise = fetch("db.sqlite3").then(res => res.arrayBuffer());
+            const dataPromise = fetch("maru.db").then(res => res.arrayBuffer());
             Promise.all([sqlPromise, dataPromise]).then(([SQL, buf]) => {
                 var db = new SQL.Database(new Uint8Array(buf));
-                var res = db.exec("SELECT * FROM sqlite_sequence");
-                console.log(res);
-                document.querySelector(".output").innerHTML = JSON.stringify(res);
+                var res = db.exec("SELECT * FROM articles");
+                let object = res[0];
+                let data = [];
+                let i = 0;
+                let j = 0;
+                for (let valueArray of object.values) {
+                    data[i] = {};
+                    j = 0;
+                    for (let column of object.columns) {
+                    Object.assign(data[i], { [column]: valueArray[j] });
+                    j++;
+                    }
+                    i++;
+                }
+                // document.querySelector("main").innerHTML = JSON.stringify(data);
+
+                function render_article(article) {
+                    const tpl = document.querySelector("#tpl-article");
+                    const clone = tpl.content.cloneNode(true);
+                    const articleElement = clone.querySelector("article");
+                    console.log(article.contents);
+                    articleElement.innerHTML = marked("[" + article.title + "](" + "?no=" + article.no + ")\n=========\n\n" + article.contents);
+                    document.querySelector("main").appendChild(clone);
+                }
+                
+                const URLSearch = new URLSearchParams(location.search);
+                const articleID = URLSearch.get("no");
+                if (articleID) {
+                    const article = data.find((article) => article.no == articleID);
+                    render_article(article);
+                } else {
+                    data.forEach((article) => {
+                        render_article(article);
+                    });
+                }
             });
         </script>
     </head>
     <body>
-        <h1>SQL.js Test</h1>
-        <div class="output"></div>
+        <h1><a href="test.html">SQL.js Test</a></h1>
+        <main>
+        </main>
+        <template id="tpl-article">
+            <article>
+            </article>
+        </template>
+        <script type="text/javascript">
+            
+        </script>
     </body>
 </html>
