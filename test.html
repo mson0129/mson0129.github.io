@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SQL.js Test</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js" integrity="sha512-n7swEtVCvXpQ7KxgpPyp0+DQQEf5vPpmzCRl14x2sp2v5LpCYCjrAx03mkBAbWwGF9eUoIk8YVcDFuJRIeYttg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body>
+        <h1>SQL.js Test</h1>
+        <script>
+            initSqlJs({locateFile: filename => 'db.sqlite3' }).then(function(SQL) {
+                const db = new SQL.Database();
+                
+                const contents = db.exec("SELECT * FROM sqlite_sequence;");
+                console.log(contents);
+            });
+        </script>
+    </body>
+</html>
