@@ -48,7 +48,7 @@ li {
     display: block;
     width: 30px;
     height: 30px;
-    background-image: url('/assets/icon/shopping.svg');
+    background-image: url('assets/icon/shopping.svg');
 }
 
 .heading2 {
@@ -151,7 +151,7 @@ li {
     width: 68px;
     height: 14px;
     margin-right: 4px;
-    background-image: url('/assets/sprites/rating-stars.png');
+    background-image: url('assets/sprites/rating-stars.png');
     background-repeat: no-repeat;
 }
 
