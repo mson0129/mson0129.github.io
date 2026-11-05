@@ -12,10 +12,13 @@
 .tools{position:sticky;top:0;z-index:20;background:var(--paper);flex-direction:column;gap:16px;padding:20px 0 16px;border-top:0;box-shadow:0 6px 12px -12px #20282166}
 .search{order:-1;display:block;border:0;padding:0}
 .search label{display:block;font-size:12px;font-weight:bold;color:var(--ink);margin-bottom:8px}
-.search-field{display:flex;align-items:center;background:white;border:1px solid var(--line);border-radius:10px;padding:6px;gap:8px}
-.search-field:focus-within{border-color:var(--green)}
+.search-field{position:relative;isolation:isolate;display:flex;align-items:center;background:transparent;border:1px solid transparent;border-radius:28px;padding:6px;gap:8px}
+.search-field>.glass-surface{z-index:-1;pointer-events:none}
+.search-field input{position:relative;border-radius:20px}
+.search-field input::placeholder{color:#72786e;opacity:1}
+.search-field:focus-within{border-color:rgba(54,91,64,.55);outline:2px solid rgba(54,91,64,.12);outline-offset:3px}
 .search input{width:100%;min-width:0;padding:10px 12px;font-size:14px}
-.search-submit{flex-shrink:0;border:0;border-radius:7px;background:var(--green);color:white;padding:10px 24px;font-size:13px}
+.search-submit{flex-shrink:0;border:0;border-radius:22px;background:var(--green);color:white;padding:10px 24px;font-size:13px}
 .search-submit:hover{background:#264630}
 article{scroll-margin-top:210px}
 @media(max-width:650px){.tools{padding:20px 0}.search-submit{padding:10px 18px}.search input{font-size:16px}}
@@ -40,7 +43,7 @@ html{scrollbar-gutter:stable}
 <div class="shell">
 <header><a class="brand" href="index.htm" aria-label="모아 홈">모아<i aria-hidden="true"></i></a><span class="edition">A FEED FOR THE CURIOUS</span></header>
 <main>
-<div class="tools"><nav class="filters" aria-label="뉴스 분야"><span class="filter-bubble" aria-hidden="true"><span class="glass-surface"></span></span><button class="filter" data-category="전체" aria-pressed="true">전체</button><button class="filter" data-category="경제" aria-pressed="false">경제</button><button class="filter" data-category="카메라" aria-pressed="false">카메라</button><button class="filter" data-category="IT" aria-pressed="false">IT</button></nav><form class="search" role="search" id="search-form"><label for="search">뉴스 검색</label><div class="search-field"><input type="search" id="search" placeholder="제목, 내용, #해시태그로 검색" aria-label="키워드 또는 해시태그 검색"><button type="submit" class="search-submit">검색</button></div></form></div>
+<div class="tools"><nav class="filters" aria-label="뉴스 분야"><span class="filter-bubble" aria-hidden="true"><span class="glass-surface"></span></span><button class="filter" data-category="전체" aria-pressed="true">전체</button><button class="filter" data-category="경제" aria-pressed="false">경제</button><button class="filter" data-category="카메라" aria-pressed="false">카메라</button><button class="filter" data-category="IT" aria-pressed="false">IT</button></nav><form class="search" role="search" id="search-form"><label for="search">뉴스 검색</label><div class="search-field"><span class="glass-surface" aria-hidden="true"></span><input type="search" id="search" placeholder="제목, 내용, #해시태그로 검색" aria-label="키워드 또는 해시태그 검색"><button type="submit" class="search-submit">검색</button></div></form></div>
 <section class="intro" aria-labelledby="title"><div><p class="eyebrow">ECONOMY · CAMERA · TECHNOLOGY</p><h1>관심이 모이면,<br><strong>세상이 조금 더 선명해져요.</strong></h1></div><p>경제부터 카메라, IT까지.<br>궁금한 소식을 한 흐름으로 만나보세요.</p></section>
 
 <p class="notice">지금은 디자인 검토용 샘플 피드입니다. 제목과 요약은 예시이며, 각 제목을 누르면 관련 주제의 Google 뉴스 검색으로 이동합니다. 실시간 뉴스는 연동되지 않았습니다.</p>
