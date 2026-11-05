@@ -22,9 +22,15 @@ article{scroll-margin-top:210px}
 
 .filters{position:relative;isolation:isolate}
 .filter{position:relative;z-index:1}
-.filter-bubble{position:absolute;left:0;top:0;z-index:0;pointer-events:none;background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(202,220,203,.65) 55%,rgba(245,255,245,.7));border:1px solid rgba(255,255,255,.85);box-shadow:inset 0 1px 1px rgba(255,255,255,.95),inset 0 -1px 2px rgba(86,120,91,.14),0 3px 10px rgba(44,72,48,.12);border-radius:30px;transition:transform 280ms cubic-bezier(.22,.68,0,1),width 280ms cubic-bezier(.22,.68,0,1),height 280ms cubic-bezier(.22,.68,0,1)}
-.filter-bubble::after{content:"";position:absolute;inset:2px;border-radius:inherit;background:linear-gradient(165deg,rgba(255,255,255,.7),transparent 48%);pointer-events:none}
-@supports ((backdrop-filter:blur(12px)) or (-webkit-backdrop-filter:blur(12px))){.filter-bubble{background:linear-gradient(145deg,rgba(255,255,255,.68),rgba(181,209,184,.28) 55%,rgba(255,255,255,.4));-webkit-backdrop-filter:blur(12px) saturate(160%);backdrop-filter:blur(12px) saturate(160%)}}
+.filters{align-self:flex-start;gap:4px;padding:5px;background:rgba(32,40,33,.055);border-radius:999px;box-shadow:inset 0 1px 2px rgba(30,40,32,.045)}
+.filter{padding:8px 19px;color:#62685f}
+.filter[aria-pressed=true]{color:#202821}
+.filter-bubble{position:absolute;left:0;top:0;z-index:0;pointer-events:none;border-radius:999px;transition:transform 420ms cubic-bezier(.22,.8,.2,1),width 420ms cubic-bezier(.22,.8,.2,1),height 420ms cubic-bezier(.22,.8,.2,1)}
+.glass-surface{position:absolute;inset:0;border-radius:inherit;background:rgba(255,255,255,.32);box-shadow:0 2px 3px rgba(24,30,26,.08),0 5px 12px rgba(24,30,26,.07),inset 0 0 0 1px rgba(255,255,255,.62),inset 0 1.5px 1px rgba(255,255,255,.95),inset 0 -1px 1px rgba(48,56,50,.13);transform-origin:center}
+.glass-surface::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(155deg,rgba(255,255,255,1) 2%,rgba(255,255,255,.2) 30%,rgba(85,92,87,.2) 48%,rgba(255,255,255,.85) 72%,rgba(255,255,255,.3));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude}
+.glass-surface::after{content:"";position:absolute;inset:2px;border-radius:inherit;background:linear-gradient(175deg,rgba(255,255,255,.55),rgba(255,255,255,.03) 38%,transparent 62%,rgba(255,255,255,.22));box-shadow:inset 2px 0 3px rgba(255,255,255,.4),inset -2px 0 3px rgba(255,255,255,.35)}
+@supports ((backdrop-filter:blur(3px)) or (-webkit-backdrop-filter:blur(3px))){.glass-surface{-webkit-backdrop-filter:blur(3px) saturate(135%) brightness(1.04);backdrop-filter:blur(3px) saturate(135%) brightness(1.04)}}
+@media(max-width:650px){.filter{padding:7px 16px}}
 .filters:not(.bubble-ready) .filter-bubble{transition:none}
 html{scrollbar-gutter:stable}
 @media(prefers-reduced-motion:reduce){.filter-bubble{transition:none}}
@@ -34,7 +40,7 @@ html{scrollbar-gutter:stable}
 <div class="shell">
 <header><a class="brand" href="index.htm" aria-label="모아 홈">모아<i aria-hidden="true"></i></a><span class="edition">A FEED FOR THE CURIOUS</span></header>
 <main>
-<div class="tools"><nav class="filters" aria-label="뉴스 분야"><span class="filter-bubble" aria-hidden="true"></span><button class="filter" data-category="전체" aria-pressed="true">전체</button><button class="filter" data-category="경제" aria-pressed="false">경제</button><button class="filter" data-category="카메라" aria-pressed="false">카메라</button><button class="filter" data-category="IT" aria-pressed="false">IT</button></nav><form class="search" role="search" id="search-form"><label for="search">뉴스 검색</label><div class="search-field"><input type="search" id="search" placeholder="제목, 내용, #해시태그로 검색" aria-label="키워드 또는 해시태그 검색"><button type="submit" class="search-submit">검색</button></div></form></div>
+<div class="tools"><nav class="filters" aria-label="뉴스 분야"><span class="filter-bubble" aria-hidden="true"><span class="glass-surface"></span></span><button class="filter" data-category="전체" aria-pressed="true">전체</button><button class="filter" data-category="경제" aria-pressed="false">경제</button><button class="filter" data-category="카메라" aria-pressed="false">카메라</button><button class="filter" data-category="IT" aria-pressed="false">IT</button></nav><form class="search" role="search" id="search-form"><label for="search">뉴스 검색</label><div class="search-field"><input type="search" id="search" placeholder="제목, 내용, #해시태그로 검색" aria-label="키워드 또는 해시태그 검색"><button type="submit" class="search-submit">검색</button></div></form></div>
 <section class="intro" aria-labelledby="title"><div><p class="eyebrow">ECONOMY · CAMERA · TECHNOLOGY</p><h1>관심이 모이면,<br><strong>세상이 조금 더 선명해져요.</strong></h1></div><p>경제부터 카메라, IT까지.<br>궁금한 소식을 한 흐름으로 만나보세요.</p></section>
 
 <p class="notice">지금은 디자인 검토용 샘플 피드입니다. 제목과 요약은 예시이며, 각 제목을 누르면 관련 주제의 Google 뉴스 검색으로 이동합니다. 실시간 뉴스는 연동되지 않았습니다.</p>
@@ -83,7 +89,14 @@ window.addEventListener('resize',moveBubble);
 if(document.fonts)document.fonts.ready.then(moveBubble);
 moveBubble();
 requestAnimationFrame(()=>requestAnimationFrame(()=>filters.classList.add('bubble-ready')));
-function setCategory(value){category=value;document.querySelectorAll('.filter').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.category===value)));moveBubble();render();}
+let glassMotion;
+function setCategory(value){
+ if(value!==category&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const surface=bubble.querySelector('.glass-surface');
+  if(glassMotion)glassMotion.cancel();
+  if(surface.animate)glassMotion=surface.animate([{transform:'scale(1,1)'},{transform:'scale(1.12,.94)',offset:.3},{transform:'scale(.98,1.025)',offset:.75},{transform:'scale(1,1)'}],{duration:460,easing:'cubic-bezier(.22,.8,.2,1)'});
+ }
+ category=value;document.querySelectorAll('.filter').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.category===value)));moveBubble();render();}
 document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>setCategory(b.dataset.category)));
 document.getElementById('search-form').addEventListener('submit',event=>{event.preventDefault();render();const feed=document.getElementById('feed');const offset=document.querySelector('.tools').getBoundingClientRect().height+16;window.scrollTo({top:window.scrollY+feed.getBoundingClientRect().top-offset,behavior:'smooth'});});
 search.addEventListener('input',render);document.getElementById('year').textContent=new Date().getFullYear();render();
