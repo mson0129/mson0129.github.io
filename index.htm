@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f4ef">
+<meta name="description" content="경제, 카메라, IT. 관심 있는 소식을 한곳에서 읽는 뉴스 피드.">
+<title>모아 — 관심의 흐름</title>
+<style>
+:root{--paper:#f5f4ef;--ink:#202821;--muted:#73796e;--line:#dedfd6;--green:#365b40}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.6}button,input,a{-webkit-tap-highlight-color:transparent}button,input{font:inherit}a{color:inherit}button{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #729776;outline-offset:5px}.shell{max-width:1240px;margin:auto;padding:0 48px}header{display:flex;justify-content:space-between;align-items:center;height:100px;border-bottom:1px solid var(--line)}.brand{text-decoration:none;font-size:30px;font-weight:900;letter-spacing:-2px;display:flex;align-items:center;gap:10px}.brand i{display:block;width:14px;height:14px;background:var(--green);border-radius:50%}.edition{font-size:11px;letter-spacing:2px;color:var(--muted)}.intro{padding:65px 0 42px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}.eyebrow{font-size:11px;font-weight:bold;letter-spacing:2px;color:var(--green);margin:0 0 15px}h1{font-size:clamp(34px,5vw,56px);line-height:1.25;letter-spacing:-2.5px;margin:0;font-weight:500}h1 strong{font-weight:800}.intro p:last-child{color:var(--muted);font-size:14px;margin:0 0 4px}.tools{display:flex;justify-content:space-between;gap:20px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid transparent;background:transparent;color:var(--muted);border-radius:30px;padding:8px 19px;font-size:13px}.filter[aria-pressed=true]{background:var(--ink);color:white}.search{display:flex;align-items:center;gap:10px;color:var(--muted)}.search input{width:200px;background:none;border:0;color:var(--ink);font-size:13px;padding:8px 0}.layout{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:60px;padding-top:35px}.feed-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}.feed-heading h2{font-size:12px;letter-spacing:1px;margin:0}.count{font-size:11px;color:var(--muted)}article{padding:30px 0;border-bottom:1px solid var(--line)}.meta{display:flex;gap:10px;align-items:center;font-size:11px;color:var(--muted)}.category{color:var(--green);font-weight:bold}.article-body{display:grid;grid-template-columns:1fr 140px;gap:28px;align-items:center}.article-title{font-size:23px;line-height:1.45;letter-spacing:-.7px;margin:12px 0 10px}.article-title a{text-decoration:none}.article-title a:hover{color:var(--green);text-decoration:underline;text-underline-offset:4px}.summary{font-size:13px;line-height:1.85;color:var(--muted);margin:0}.art{height:132px;background:#e4e8de;display:grid;place-items:center;border-radius:5px;color:#50654e;overflow:hidden}.art svg{width:90px;height:90px}.art.camera{background:#e9e4da;color:#766951}.art.it{background:#dde5e7;color:#536f78}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px}.tag{border:1px solid var(--line);background:transparent;color:#6a7466;border-radius:5px;font-size:11px;padding:4px 9px}.tag:hover{background:#e7ebdf;border-color:#a9b9a2}.aside-block{border-top:2px solid var(--ink);padding:19px 0 30px}.aside-block h2{font-size:12px;margin:0 0 19px}.about{font-size:24px;font-weight:500;letter-spacing:-1px;line-height:1.5;margin:0 0 14px}.aside-copy{font-size:12px;line-height:1.9;color:var(--muted)}.topic{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:12px}.topic span:last-child{font-size:10px;color:var(--muted)}.notice{padding:16px;background:#ebece4;border-radius:5px;font-size:11px;line-height:1.9;color:#6c7465}.reset{border:0;background:transparent;text-decoration:underline;color:var(--green);font-size:12px;padding:0}.empty{padding:70px 0;color:var(--muted);text-align:center}.end{text-align:center;color:var(--muted);font-size:12px;margin:35px 0 60px}footer{padding:25px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:10px;letter-spacing:1px;color:var(--muted)}@media(max-width:900px){.shell{padding:0 28px}.layout{gap:30px;grid-template-columns:minmax(0,1fr) 210px}.intro{align-items:start;flex-direction:column}.article-body{grid-template-columns:1fr 110px;gap:16px}.art{height:110px}.article-title{font-size:20px}}@media(max-width:650px){.shell{padding:0 22px}header{height:78px}.edition{font-size:9px;letter-spacing:1px}.intro{padding:42px 0 30px;gap:18px}.intro p:last-child{font-size:12px}.tools{flex-direction:column;gap:12px}.filter{padding:7px 16px}.search input{width:100%}.search{border-top:1px solid var(--line);padding-top:10px}.layout{display:block;padding-top:24px}aside{display:none}.article-body{grid-template-columns:1fr 88px;gap:15px}.art{height:100px}.art svg{width:65px;height:65px}.article-title{font-size:19px}.summary{font-size:12px}.end{margin-bottom:40px}footer{font-size:9px}.brand{font-size:27px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header><a class="brand" href="index.htm" aria-label="모아 홈">모아<i aria-hidden="true"></i></a><span class="edition">A FEED FOR THE CURIOUS</span></header>
+<main>
+<section class="intro" aria-labelledby="title"><div><p class="eyebrow">ECONOMY · CAMERA · TECHNOLOGY</p><h1>관심이 모이면,<br><strong>세상이 조금 더 선명해져요.</strong></h1></div><p>경제부터 카메라, IT까지.<br>궁금한 소식을 한 흐름으로 만나보세요.</p></section>
+<div class="tools"><nav class="filters" aria-label="뉴스 분야"><button class="filter" data-category="전체" aria-pressed="true">전체 보기</button><button class="filter" data-category="경제" aria-pressed="false">경제</button><button class="filter" data-category="카메라" aria-pressed="false">카메라</button><button class="filter" data-category="IT" aria-pressed="false">IT</button></nav><label class="search"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="키워드 또는 해시태그 검색" aria-label="키워드 또는 해시태그 검색"></label></div>
+<p class="notice">지금은 디자인 검토용 샘플 피드입니다. 제목과 요약은 예시이며, 각 제목을 누르면 관련 주제의 Google 뉴스 검색으로 이동합니다. 실시간 뉴스는 연동되지 않았습니다.</p>
+<div class="layout"><section aria-label="아티클 피드"><div class="feed-heading"><h2>THE FEED <span aria-hidden="true">↘</span></h2><span class="count" id="count" role="status" aria-live="polite"></span></div><div id="feed"></div><noscript><p>피드를 보려면 JavaScript를 활성화해 주세요.</p></noscript><p class="end">여기까지 모두 읽었어요. 새로운 관심을 찾아보세요.</p></section>
+<aside><section class="aside-block"><p class="eyebrow">STAY CURIOUS</p><p class="about">넓게 보고,<br>깊게 이해하는 일.</p><p class="aside-copy">빠르게 지나가는 소식 사이에서<br>나에게 필요한 이야기를 발견하세요.</p></section><section class="aside-block"><h2>우리가 주목하는 이야기</h2><div class="topic"><span>01 &nbsp; 경제의 흐름</span><span>ECONOMY</span></div><div class="topic"><span>02 &nbsp; 렌즈 너머의 세상</span><span>CAMERA</span></div><div class="topic"><span>03 &nbsp; 기술의 다음 장면</span><span>TECH</span></div></section></aside></div>
+</main><footer><span>모아 © <span id="year"></span></span><span>작은 관심이 만드는, 더 넓은 시선.</span></footer>
+</div>
+<script>
+const articles=[
+{category:'경제',title:'금리의 방향이 바뀔 때, 우리가 살펴봐야 할 것들',summary:'금리와 환율, 그리고 일상의 소비까지. 서로 연결된 경제 지표를 통해 시장의 흐름을 읽어봅니다.',tags:['금리','글로벌경제','시장흐름'],query:'금리 환율 경제'},
+{category:'카메라',title:'가벼운 카메라 한 대가 바꾸는 일상의 기록',summary:'언제든 꺼내 들 수 있는 크기와 충분한 화질 사이. 컴팩트 카메라와 작은 렌즈에 주목하는 이유를 살펴봅니다.',tags:['컴팩트카메라','사진','일상의기록'],query:'컴팩트 카메라 신제품'},
+{category:'IT',title:'AI가 일하는 방식에 스며들면, 무엇이 달라질까',summary:'아이디어 정리부터 반복 작업까지. AI 도구가 바꾸는 업무의 풍경과 우리가 고민해야 할 질문들.',tags:['AI','생산성','디지털워크'],query:'인공지능 업무 생산성'},
+{category:'경제',title:'반도체에서 에너지까지, 산업의 연결고리 읽기',summary:'하나의 기술이 성장하기 위해 필요한 것은 무엇일까요. 공급망과 전력 수요로 산업의 큰 그림을 따라갑니다.',tags:['반도체','에너지','산업트렌드'],query:'반도체 에너지 전력 수요'},
+{category:'카메라',title:'스펙보다 중요한 것, 나에게 맞는 렌즈 고르기',summary:'풍경과 인물, 그리고 거리의 순간들. 자주 찍는 장면을 기준으로 초점거리와 렌즈의 성격을 알아봅니다.',tags:['렌즈','미러리스','사진생활'],query:'미러리스 카메라 렌즈'},
+{category:'IT',title:'손안의 기기에서 직접 실행되는 AI의 가능성',summary:'클라우드를 거치지 않는 처리 방식은 어떤 경험을 만들까요. 온디바이스 AI와 개인정보 보호의 접점을 짚어봅니다.',tags:['온디바이스AI','개인정보','테크트렌드'],query:'온디바이스 AI 개인정보'}
+];
+const icons={경제:'<path d="M15 72h70M24 61V45h12v16M44 61V32h12v29M64 61V18h12v43"/><path d="m20 30 23-13 16 4 19-13"/>',카메라:'<rect x="12" y="30" width="76" height="48" rx="7"/><path d="m30 30 6-12h27l7 12"/><circle cx="50" cy="54" r="16"/><circle cx="50" cy="54" r="10"/><path d="M74 40h5"/>',IT:'<rect x="26" y="26" width="48" height="48" rx="7"/><rect x="38" y="38" width="24" height="24" rx="3"/><path d="M36 14v12m14-12v12m14-12v12M36 74v12m14-12v12m14-12v12M14 36h12M14 50h12M14 64h12m48-28h12M74 50h12M74 64h12"/>'};
+let category='전체';
+const search=document.getElementById('search');
+function render(){
+ const keyword=search.value.trim().replace(/^#/,'').toLocaleLowerCase();
+ const shown=articles.filter(a=>(category==='전체'||a.category===category)&&[a.title,a.summary,...a.tags].join(' ').toLocaleLowerCase().includes(keyword));
+ const feed=document.getElementById('feed');feed.replaceChildren();
+ shown.forEach(a=>{
+ const article=document.createElement('article');
+ const meta=document.createElement('div');meta.className='meta';
+ const cat=document.createElement('span');cat.className='category';cat.textContent=a.category;
+ const source=document.createElement('span');source.textContent='주제 미리보기 · 샘플';meta.append(cat,source);
+ const body=document.createElement('div');body.className='article-body';
+ const copy=document.createElement('div');const title=document.createElement('h2');title.className='article-title';
+ const link=document.createElement('a');link.href='https://news.google.com/search?q='+encodeURIComponent(a.query)+'&hl=ko&gl=KR&ceid=KR:ko';link.target='_blank';link.rel='noopener noreferrer';link.textContent=a.title;link.setAttribute('aria-label',a.title+' (관련 뉴스 검색, 새 탭)');title.append(link);
+ const summary=document.createElement('p');summary.className='summary';summary.textContent=a.summary;copy.append(title,summary);
+ const art=document.createElement('div');art.className='art '+({카메라:'camera',IT:'it'}[a.category]||'');art.setAttribute('aria-hidden','true');art.innerHTML='<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+icons[a.category]+'</svg>';body.append(copy,art);
+ const tags=document.createElement('div');tags.className='tags';tags.setAttribute('aria-label','아티클 해시태그');a.tags.forEach(t=>{const tag=document.createElement('button');tag.type='button';tag.className='tag';tag.textContent='#'+t;tag.setAttribute('aria-label','#'+t+' 검색');tag.addEventListener('click',()=>{search.value=t;setCategory('전체');search.focus();});tags.append(tag);});article.append(meta,body,tags);feed.append(article);
+ });
+ document.getElementById('count').textContent=shown.length+'개의 이야기';
+ if(!shown.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='일치하는 이야기가 없어요. 다른 키워드로 찾아보세요. ';const reset=document.createElement('button');reset.className='reset';reset.textContent='전체 보기';reset.onclick=()=>{search.value='';setCategory('전체');};empty.append(reset);feed.append(empty);}
+ document.querySelector('.end').hidden=!shown.length;
+}
+function setCategory(value){category=value;document.querySelectorAll('.filter').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.category===value)));render();}
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>setCategory(b.dataset.category)));
+search.addEventListener('input',render);document.getElementById('year').textContent=new Date().getFullYear();render();
+</script>
+</body>
+</html>
