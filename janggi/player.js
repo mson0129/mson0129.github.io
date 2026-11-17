@@ -1,5 +1,5 @@
 const $=s=>document.querySelector(s),canvas=$('#game'),ctx=canvas.getContext('2d'),status=$('#status');
-const worker=new Worker(new URL('./worker.js',import.meta.url),{type:'module'}),pending=new Map();let serial=0,position,selected=-1,targets=[],cursor=58,busy=true,human='8',record=[],active=false,broken=false;
+const worker=new Worker(new URL('./worker.js?v=ai-material-order-2',import.meta.url),{type:'module'}),pending=new Map();let serial=0,position,selected=-1,targets=[],cursor=58,busy=true,human='8',record=[],active=false,broken=false;
 worker.onmessage=({data})=>{const p=pending.get(data.id);if(!p)return;pending.delete(data.id);if(data.error)p.reject(Error(data.error));else {position=data.state;p.resolve(data.result);}};
 worker.onerror=()=>{for(const p of pending.values())p.reject(Error('게임 엔진을 시작하지 못했습니다.'));pending.clear();};
 function call(cmd,args={}){return new Promise((resolve,reject)=>{const id=++serial;pending.set(id,{resolve,reject});worker.postMessage({id,cmd,...args});});}
