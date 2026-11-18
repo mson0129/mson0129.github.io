@@ -23,3 +23,23 @@ export function kibo(record, army, selected, cursor, turn) {
     }
     return null;
 }
+
+// Each army keeps two rows. During its turn, the lower row is the live selection.
+export function kiboRows(record, army, selected, cursor, turn) {
+    const recent = [];
+    for (let index = record.length - 1; index >= 0 && recent.length < 2; index--) {
+        if (index % 2 === army / 8) {
+            recent.push({
+                number: index + 1,
+                from: record[index][0],
+                to: record[index][1],
+                selecting: false,
+                current: false,
+            });
+        }
+    }
+    if (turn === army) {
+        return [recent[0] || null, kibo(record, army, selected, cursor, turn)];
+    }
+    return [recent[1] || null, recent[0] || null];
+}

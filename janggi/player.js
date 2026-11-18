@@ -1,4 +1,4 @@
-import {slideFrame,notation,kibo} from './presentation.mjs';
+import {slideFrame,notation,kiboRows} from './presentation.mjs';
 const $=s=>document.querySelector(s),canvas=$('#game'),ctx=canvas.getContext('2d'),status=$('#status');
 const worker=new Worker(new URL('./worker.js?v=rust-original-ai-2',import.meta.url),{type:'module'}),pending=new Map();let serial=0,position,selected=-1,targets=[],cursor=58,busy=true,human='8',record=[],active=false,broken=false;
 worker.onmessage=({data})=>{const p=pending.get(data.id);if(!p)return;pending.delete(data.id);if(data.error)p.reject(Error(data.error));else {position=data.state;p.resolve(data.result);}};
@@ -71,9 +71,12 @@ function render(){
   const top=army===0?40:116;
   text((army===0?'<CHO> ':'<HAN> ')+(human===String(army)||human==='both'?'HUMAN':'COMPUTER'),530,top,10);
   text('TIME '+formatTime(army),530,top+20,10);
-  const entry=kibo(record,army,selected,cursor,position.turn);
-  text(entry?String(entry.number):'-',530,top+57,10);
-  text(entry?(entry.from<0?'PASS':notation(entry.from)+(entry.current?':':'-')+(entry.current&&!entry.selecting?'--':notation(entry.to))):'-- : --',578,top+57,10,'#fff','center');
+  const rows=kiboRows(record,army,selected,cursor,position.turn);
+  rows.forEach((entry,index)=>{
+   const y=top+40+index*17;
+   text(entry?String(entry.number):'-',530,y,10);
+   text(entry?(entry.from<0?'PASS':notation(entry.from)+(entry.current?':':'-')+(entry.current&&!entry.selecting?'--':notation(entry.to))):'-- : --',578,y,10,'#fff','center');
+  });
  }
  text('== PLAY ==',578,213,11,'#fff','center');text(position.turn===0?'CHO / 초':'HAN / 한',578,245,13,position.turn===0?'#7777ff':'#ff7777','center');text(`${position.ply} 수`,578,272,12,'#fff','center');
  if(busy&&active)text('생각 중…',578,307,12,'#ffe08a','center');else if(position.winner!==-1)text(`${position.winner===0?'초':'한'} 승리`,578,307,13,'#ffe08a','center');else if(position.check)text('장군!',578,307,14,'#ffe08a','center');
