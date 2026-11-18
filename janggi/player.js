@@ -69,7 +69,14 @@ function render(){
  text('< JANG V1.0 >',578,19,11,'#fff','center');
  for(const army of [0,8]){
   const top=army===0?40:116;
-  text((army===0?'<CHO> ':'<HAN> ')+(human===String(army)||human==='both'?'HUMAN':'COMPUTER'),530,top,10);
+  const armyLabel=army===0?'<CHO>':'<HAN>';
+  const highlighted=active&&position.winner===-1&&position.turn===army;
+  if(highlighted){
+   ctx.fillStyle='#fff';
+   ctx.fillRect(530,top-9,31,11);
+  }
+  text(armyLabel,530,top,10,highlighted?'#000':'#fff');
+  text(human===String(army)||human==='both'?'HUMAN':'COMPUTER',566,top,10);
   text('TIME '+formatTime(army),530,top+20,10);
   const rows=kiboRows(record,army,selected,cursor,position.turn);
   rows.forEach((entry,index)=>{
