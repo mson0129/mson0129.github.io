@@ -42,7 +42,7 @@ async function animateMove(before,move){
  });
 }
 function render(){
- ctx.imageSmoothingEnabled=false;ctx.fillStyle='#000';ctx.fillRect(0,0,640,480);ctx.fillStyle='#aa5500';ctx.fillRect(0,0,516,474);ctx.strokeStyle='#171000';ctx.lineWidth=1;
+ ctx.imageSmoothingEnabled=false;ctx.fillStyle='#000';ctx.fillRect(0,0,640,480);ctx.fillStyle='#aa5500';ctx.fillRect(12,0,504,468);ctx.strokeStyle='#171000';ctx.lineWidth=1;
  for(let x=0;x<9;x++){ctx.beginPath();ctx.moveTo(30+x*57,24);ctx.lineTo(30+x*57,447);ctx.stroke();}
  for(let y=0;y<10;y++){ctx.beginPath();ctx.moveTo(30,24+y*47);ctx.lineTo(486,24+y*47);ctx.stroke();text(`${(y+1)%10}`,4,28+y*47,9);}
  for(const top of [0,7])for(const rev of [false,true]){ctx.beginPath();ctx.moveTo(rev?315:201,24+top*47);ctx.lineTo(rev?201:315,24+(top+2)*47);ctx.stroke();}
