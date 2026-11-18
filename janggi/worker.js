@@ -4,7 +4,7 @@ self.onmessage = async ({data:{id,cmd,from,to,moves,seed,seeds}}) => {
  try {
   let result;
   if(cmd==='init') {
-   if(!game){const response=await fetch(new URL('./janggi.wasm?v=ai-material-order-2',import.meta.url));if(!response.ok)throw Error('WASM 파일을 불러오지 못했습니다.');const {instance}=await WebAssembly.instantiate(await response.arrayBuffer(),{});game=instance.exports;}
+   if(!game){const response=await fetch(new URL('./janggi.wasm?v=rust-original-ai-2',import.meta.url));if(!response.ok)throw Error('WASM 파일을 불러오지 못했습니다.');const {instance}=await WebAssembly.instantiate(await response.arrayBuffer(),{});game=instance.exports;}
    game.init();for(const [i,m] of (moves||[]).entries()){if(Number.isInteger(seeds?.[i]))game.set_seed(seeds[i]);if(m[0]===-1?!game.ai_pass_turn():!game.move(m[0],m[1]))throw Error('저장된 대국을 복원하지 못했습니다.');}if(Number.isInteger(seed))game.set_seed(seed);
   } else if(cmd==='targets'){result=Array.from({length:90},(_,i)=>i).filter(i=>game.legal(from,i));}
   else if(cmd==='move'){result=!!game.move(from,to);}
